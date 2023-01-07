@@ -1,0 +1,63 @@
+:host {
+    /* css properties */
+    --body-gap: var(--spacing-m);
+    --header-gap: var(--spacing-m);
+    --functions-gap: var(--spacing-m);
+    --footer-gap: var(--spacing-m);
+  }
+  :host(:not([expanded])) air-card {
+    cursor: pointer;
+  }
+  air-card {
+    padding: var(--spacing-s) var(--spacing-l);
+    --body-gap: inherit;
+    --header-gap: inherit;
+    --functions-gap: inherit;
+    --footer-gap: inherit;
+  }
+  slot:not([name]) {
+    transition: var(--transition-1);
+    display: inherit;
+    flex-direction: inherit;
+    gap: inherit;
+  }
+  slot[name='footer'] {
+    justify-content: flex-end;
+  }
+  /* expanded */
+  :host([expanded]) slot:not([name]) {
+    margin-top: var(--spacing-l);
+  }
+  :host(:not([expanded])) slot:not([name]) {
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+  }
+  :host([expanded]) .expand {
+    transform: rotate(180deg);
+  }
+  .header {
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+  }
+  .icon {
+    margin-right: var(--spacing-s);
+  }
+  slot[name='header'] p {
+    font: var(--header-1);
+    color: var(--text-1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: unset;
+    flex: 1;
+  }
+  /* disabled */
+  :host([disabled]) .header {
+    opacity: 0.2;
+  }
+  :host([disabled]) air-card {
+    pointer-events: none;
+  }

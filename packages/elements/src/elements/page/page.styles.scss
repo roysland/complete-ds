@@ -1,0 +1,34 @@
+:host {
+    min-height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(var(--base-1));
+  }
+  :host([flat]) {
+    background-color: rgb(var(--base-3));
+  }
+  .center-wrapper,
+  slot {
+    display: flex;
+    flex-direction: column;
+  }
+  .center-wrapper,
+  slot:not([name]) {
+    flex: 1;
+    overflow: hidden;
+  }
+  :host([scrollable]) slot:not([name]) {
+    overflow: auto;
+  }
+  slot[name='top'],
+  slot[name='bottom'],
+  :host([flex-direction='column']) slot:not([name]) {
+    flex-direction: column;
+  }
+  slot[name="top"] {
+    position: sticky;
+    top: 0;
+    background-color: rgb(var(--base-1));
+  }

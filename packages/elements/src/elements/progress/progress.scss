@@ -1,0 +1,59 @@
+:host {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .header,
+  .footer {
+    display: flex;
+    align-items: center;
+  }
+  .label,
+  .info {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .header {
+    margin-bottom: var(--spacing-s);
+  }
+  .footer {
+    margin-top: var(--spacing-s);
+  }
+  /* radial */
+  :host([radial]) {
+    align-items: center;
+    justify-content: center;
+  }
+  .radial-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .radial-wrapper air-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  .radial {
+    transform: rotate(-90deg);
+  }
+  circle {
+    fill: transparent;
+    stroke-width: 8px;
+  }
+  /* status */
+  .status-icon {
+    margin-right: var(--spacing-s);
+  }
+  .status-icon[icon='cancel'] {
+    color: rgb(var(--functional-red));
+  }
+  .status-icon[icon='error'] {
+    color: rgb(var(--functional-yellow));
+  }
+  .status-icon[icon='check_circle'] {
+    color: rgb(var(--functional-green));
+  }

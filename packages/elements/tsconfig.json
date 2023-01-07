@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "es6",
+        "target": "es6",
+        "sourceMap": true,
+        "declaration": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "NodeNext",
+        "strict": true,
+        "useDefineForClassFields": false,
+        "outDir": "dist"
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "public"
+    ]
+}

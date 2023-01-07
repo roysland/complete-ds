@@ -1,0 +1,68 @@
+:host {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-1);
+    display: flex;
+    gap: var(--spacing-xs);
+    height: max-content;
+    width: max-content;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition-1);
+    justify-content: center;
+    user-select: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  :host([label]) {
+    min-width: calc(24px + var(--spacing-l) * 2);
+    max-width: 160px;
+    padding: 0.25rem 1rem;
+  }
+  :host([variant='tertiary'][label]) {
+    padding: 3px 11px;
+  }
+  :host(:not([label])) {
+    padding: var(--spacing-xs) var(--spacing-s);
+  }
+  :host([variant='tertiary']:not([label])) {
+    padding: 3px;
+  }
+  /* idle */
+  :host([variant='primary']) {
+    background-color: rgb(var(--accent-1));
+  }
+  :host([variant='secondary']) {
+    background-color: rgba(var(--neutral-1), 0.1);
+  }
+  :host([color='tertiary']) {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(var(--neutral-1), 0.25);
+  }
+  /* disabled */
+  :host([disabled]) {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+  /* text and icon colors */
+  air-icon {
+    color: unset;
+  }
+  :host([variant='primary']) {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  /* hover inputs */
+  @media (hover: hover) {
+    :host([variant='primary']:not(:active):hover) {
+      background-color: rgb(var(--accent-1b));
+    }
+    :host([variant='secondary']:not(:active):hover) {
+      background-color: rgba(var(--neutral-1), 0.15);
+    }
+    :host([variant='tertiary']:not(:active):hover) {
+      border-color: rgba(var(--neutral-1), 0.3);
+      background-color: rgba(var(--neutral-1), 0.05);
+    }
+  }

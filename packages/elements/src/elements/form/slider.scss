@@ -1,0 +1,55 @@
+.track {
+    width: 100%;
+    height: 2px;
+    margin: var(--spacing-l) 0;
+    background-color: rgba(var(--neutral-1), 0.2);
+    position: relative;
+  }
+  .thumb {
+    padding: 10px;
+    position: absolute;
+    top: -15px;
+    margin-left: calc(var(--spacing-l) * -1);
+    cursor: pointer;
+  }
+  .thumb > div {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: rgb(var(--accent-1));
+    transition: 0.1s all ease-out;
+  }
+  .thumb:hover > div {
+    background-color: rgb(var(--accent-1b));
+  }
+  /* input */
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    font: var(--body-1);
+    color: var(--text-1);
+    background-color: rgba(var(--neutral-1), 0.05);
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 40px;
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  .label {
+    display: flex;
+  }
+  .label air-text {
+    flex: 1;
+  }
+  .label > * + * {
+    margin-left: var(--spacing-s);
+  }

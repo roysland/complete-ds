@@ -1,0 +1,58 @@
+  html,
+  body {
+    --body-1: normal 13px/24px 'Inter';
+    --body-2: normal 11px/16px 'Inter';
+    --header-1: bold 15px/24px 'Inter';
+    --header-2: bold 13px/24px 'Inter';
+    --transition-1: 0.1s all ease-out;
+    --border-radius: 4px;
+    --spacing-xs: calc(var(--spacing-s) / 2);
+    --spacing-s: 6px;
+    --spacing-m: calc(var(--spacing-s) * 1.5);
+    --spacing-l: calc(var(--spacing-s) * 2);;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: var(--text-1);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :root {
+      font-family: 'Inter', sans-serif;
+  }
+
+  @supports (font-variation-settings: normal) {
+      :root {
+          font-family: 'Inter var', sans-serif;
+      }
+  }
+
+  /* scrollbar */
+  *::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: transparent;
+      visibility: hidden;
+  }
+
+  *::-webkit-scrollbar-track {
+      background-color: rgba(var(--neutral-1), .05);
+      border-radius: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+      background-color: rgba(var(--neutral-1), .10);
+      border-radius: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb:active,
+  *::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(var(--neutral-1), .20)
+  }

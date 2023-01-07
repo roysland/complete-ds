@@ -1,0 +1,177 @@
+:host {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: rgba(var(--neutral-1), 0.2);
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 0 8px;
+    width: 100%;
+    overflow: visible;
+    background-color: rgba(var(--neutral-1), 0.05);
+    position: relative;
+    
+  }
+  :host,
+  .label,
+  input {
+    transition: var(--transition-1);
+    
+  }
+  .center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+  input {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0px;
+    outline: none;
+    -webkit-appearance: none;
+    font: var(--body-1);
+    color: var(--text-1);
+    max-height: 16px;
+    &:focus {
+      outline: 3px solid rgb(var(--accent-1));
+    }
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='search']::-webkit-search-decoration,
+  input[type='search']::-webkit-search-cancel-button,
+  input[type='search']::-webkit-search-results-button,
+  input[type='search']::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  /* active */
+  :host([active]) {
+    border-color: rgb(var(--accent-1));
+  }
+  :host([active]) .label {
+    color: rgb(var(--accent-1));
+  }
+  /* disabled */
+  :host([disabled]) {
+    opacity: 0.2;
+  }
+  :host([disabled]),
+  :host([readonly]) {
+    pointer-events: none;
+  }
+  /* readonly */
+  :host([readonly]) {
+    background: transparent;
+  }
+  /* condensed */
+  :host([condensed]) {
+    min-height: 32px;
+  }
+  :host([condensed][value]:not([value=''])) .label,
+  :host([condensed][active]) .label {
+    display: none;
+  }
+  /* icon */
+  :host([icon]) .icon {
+    margin-right: var(--spacing-s);
+  }
+  /* label */
+  .label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: var(--body-1);
+    color: var(--text-2);
+    pointer-events: none;
+  }
+  :host([value]:not([value=''])) .label,
+  :host([active]) .label {
+    font: var(--body-2);
+  }
+  :host(:not([value]):not([active]):not([type='date'])) input,
+  :host([value='']:not([active]):not([type='date'])) input {
+    max-height: 0px;
+  }
+  input,
+  .label {
+    line-height: 16px;
+  }
+  /* clear */
+  .clear-icon {
+    transition: var(--transition-1), 0.1s opacity ease-out 0.1s;
+  }
+  :host(:not(:hover):not([active])) .clear-icon {
+    transition: var(--transition-1), 0.1s width ease-out 0.1s,
+      0.1s margin ease-out 0.1s;
+    font-size: 0;
+    max-width: 0px;
+    max-height: 0px;
+    opacity: 0;
+    margin-left: 0;
+  }
+  /* status */
+  .clear-icon,
+  .status-icon,
+  .increment-icon,
+  .select-icon,
+  slot[name='functions']::slotted(*) {
+    margin-left: var(--spacing-s);
+  }
+  .status-icon[icon='cancel'] {
+    color: rgb(var(--functional-red));
+  }
+  .status-icon[icon='error'] {
+    color: rgb(var(--functional-yellow));
+  }
+  .status-icon[icon='check_circle'] {
+    color: rgb(var(--functional-green));
+  }
+  /* select */
+  :host([type='select']),
+  :host([type='select']) * {
+    cursor: pointer !important;
+  }
+  :host([type='text']) .center,
+  :host([type='number']) .center {
+    cursor: text;
+  }
+  :host([active]) .select-icon {
+    transform: rotate(180deg);
+  }
+  .select-menu {
+    position: fixed;
+    max-height: 240px;
+    z-index: 3;
+    padding: 0px var(--spacing-l);
+    background-color: rgb(var(--base-4));
+  }
+  slot:not([name]) {
+    display: block;
+    margin: 0 calc(var(--spacing-s) * -1);
+  }
+  slot:not([name])::slotted(*) {
+    margin-bottom: 0;
+  }
+  /* date */
+  .date-icon {
+    margin-left: -24px;
+    pointer-events: none;
+  }
+  :host([type='date']) ::-webkit-calendar-picker-indicator {
+    background: unset;
+  }
+  /* hover inputs */
+  @media (hover: hover) {
+    :host(:hover:not([active])) {
+      border-color: rgba(var(--neutral-1), 0.4);
+    }
+  }

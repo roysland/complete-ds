@@ -1,0 +1,51 @@
+@mixin tagColor ($foreground, $background) {
+  border-color: $background;
+  color: $background;
+
+  &[filled] {
+    border-color: $background;
+    background-color: $background;
+    color: $foreground;
+  }
+}
+
+
+:host {
+    padding: var(--spacing-xs);
+    display: flex;
+    height: max-content;
+    width: max-content;
+    max-width: 160px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(var(--neutral-1), 0.25);
+    transition: var(--transition-1);
+  }
+  .label {
+    margin: 0 var(--spacing-xs);
+  }
+  /* button */
+  :host([button]) {
+    cursor: pointer;
+  }
+  :host([variant="green"]) { 
+    @include tagColor(#fff, rgb(var(--functional-green)));
+    
+  };
+  :host([variant="blue"]) { 
+    @include tagColor(#fff, rgb(var(--functional-blue)));
+
+  };
+  :host([variant="red"]) { 
+    @include tagColor(#fff, rgb(var(--functional-red)));
+ 
+  };
+  :host([variant="yellow"]) { 
+    @include tagColor(#fff, rgb(var(--functional-yellow))); 
+  };
+  /* hover inputs */
+  @media (hover: hover) {
+    :host([button]:not(:active):hover) {
+      border-color: rgba(var(--neutral-1), 0.3);
+      background-color: rgba(var(--neutral-1), 0.05);
+    }
+  }

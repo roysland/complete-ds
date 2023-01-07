@@ -1,0 +1,55 @@
+:host {
+    font-family: 'Material Symbols Outlined';
+    line-height: 1;
+    -webkit-font-smoothing: auto;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    opacity: 0.9;
+    color: var(--text-1);
+    transition: var(--transition-1);
+    height: max-content;
+    width: max-content;
+    min-height: max-content;
+    min-width: max-content;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    user-select: none;
+  }
+  :host([button]) {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  :host([disabled]) {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+  /* size */
+  :host([size='xl']) {
+    height: 48px;
+    width: 48px;
+    font-size: 48px;
+  }
+  :host([size='l']) {
+    height: 32px;
+    width: 32px;
+    font-size: 32px;
+  }
+  :host([size='m']) {
+    height: 24px;
+    width: 24px;
+    font-size: 24px;
+  }
+  :host([size='s']) {
+    height: 16px;
+    width: 16px;
+    font-size: 16px;
+  }
+  /* hover inputs */
+  @media (hover: hover) {
+    :host([button]:hover:not(:active)) {
+      opacity: 0.9;
+    }
+  }

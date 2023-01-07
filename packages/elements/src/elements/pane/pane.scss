@@ -1,0 +1,28 @@
+:host {
+    background-color: rgb(var(--base-2));
+    display: flex;
+    box-shadow: var(--shadow-1);
+    transition: 0.1s width ease-out;
+    /* css properties */
+    --body-gap: var(--spacing-m);
+    --header-gap: var(--spacing-m);
+    --functions-gap: var(--spacing-m);
+    --footer-gap: var(--spacing-m);
+  }
+  :host([size='l']) {
+    width: 320px;
+  }
+  :host([size='m']) {
+    width: 120px;
+  }
+  :host([size='s']) {
+    width: 80px;
+  }
+  air-card {
+    background-color: transparent;
+    box-shadow: none;
+    --body-gap: inherit;
+    --header-gap: inherit;
+    --functions-gap: inherit;
+    --footer-gap: inherit;
+  }

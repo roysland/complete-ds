@@ -1,0 +1,40 @@
+.swiper {
+    background-color: var(--neutral-1);
+    border: 1px dotted black;
+    position: relative;
+    scroll-snap-type: x mandatory;
+}
+.swiper .left, .swiper .right {
+    height: 100%;
+    position: absolute;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+}
+.swiper .left {
+    background-color: rgb(var(--functional-green));
+    left: 0;
+}
+.swiper .right {
+    background-color: rgb(var(--functional-red));
+    right: 0;
+    justify-content: flex-end;
+    
+}
+
+.swiper .wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 32px;
+    background-color: #ccc;
+    box-sizing: border-box;
+    // transition: transform ease-in-out 100ms;
+    height: 100%;
+    z-index: 2;
+    scroll-snap-align: start;
+    &.dragging {
+        background-color: #f49;
+    }
+}

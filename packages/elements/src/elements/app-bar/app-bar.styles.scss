@@ -1,0 +1,57 @@
+:host {
+    z-index: 3;
+    height: calc(24px + var(--spacing-l) * 2);
+    padding: 0 var(--spacing-l);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgb(var(--base-0));
+    box-shadow: var(--shadow-1);
+    transition: var(--transition-1);
+    gap: calc(var(--spacing-l) * 2);
+    /* css properties */
+    --functions-gap: var(--spacing-m);
+    position: sticky;
+    top: 0;
+  }
+  .logo {
+    height: 24px;
+  }
+  .label {
+    font: var(--header-1);
+    color: var(--text-1);
+    max-width: 320px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* mobile */
+  :host[mobile] {
+    gap: var(--spacing-l);
+  }
+  :host([mobile]) .label {
+    flex: 1;
+    max-width: unset;
+    text-align: center;
+  }
+  /* slots */
+  slot {
+    display: flex;
+    align-items: center;
+  }
+  slot:not([name]) {
+    flex: 1;
+  }
+  slot[name='functions'] {
+    gap: var(--functions-gap);
+  }
+  ::slotted(kor-tabs) {
+    border-bottom: unset;
+  }
+  slot[name='right'],
+  slot[name='left'] {
+    min-width: 24px;
+  }
+  slot[name='right'] {
+    margin-left: auto;
+  }

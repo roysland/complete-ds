@@ -1,0 +1,95 @@
+:host {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: rgba(var(--neutral-1), 0.2);
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: var(--spacing-xs) var(--spacing-s)
+      calc(var(--spacing-xs) - 1px) var(--spacing-s);
+    width: 100%;
+    overflow: visible;
+    background-color: rgba(var(--neutral-1), 0.05);
+    position: relative;
+  }
+  :host,
+  .label,
+  textarea {
+    transition: var(--transition-1);
+  }
+  .center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+  textarea {
+    background: none;
+    border: none;
+    padding: 0px;
+    outline: none;
+    font: var(--body-1);
+    color: var(--text-1);
+    resize: none;
+  }
+  textarea::-webkit-scrollbar {
+    display: none;
+  }
+  /* active */
+  :host([active]) {
+    border-color: rgba(var(--neutral-1), 0.6);
+  }
+  :host([active]) .label {
+    color: rgb(var(--accent-1));
+  }
+  /* disabled */
+  :host([disabled]) {
+    opacity: 0.2;
+  }
+  :host([disabled]),
+  :host([readonly]) {
+    pointer-events: none;
+  }
+  /* readonly */
+  :host([readonly]) {
+    background: transparent;
+  }
+  /* label */
+  .label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: var(--body-1);
+    color: var(--text-2);
+    pointer-events: none;
+  }
+  :host([value]) .label,
+  :host([active]) .label {
+    font: var(--body-2);
+  }
+  textarea,
+  .label {
+    line-height: 16px;
+  }
+  /* clear */
+  .clear-icon {
+    transition: var(--transition-1), 0.1s opacity ease-out 0.1s;
+  }
+  :host(:not(:hover):not([active])) .clear-icon {
+    transition: var(--transition-1), 0.1s width ease-out 0.1s,
+      0.1s margin ease-out 0.1s;
+    font-size: 0;
+    max-width: 0px;
+    max-height: 0px;
+    opacity: 0;
+    margin-left: 0;
+  }
+  /* hover inputs */
+  @media (hover: hover) {
+    :host(:hover:not([active])) {
+      border-color: rgba(var(--neutral-1), 0.4);
+    }
+  }

@@ -1,0 +1,34 @@
+:host {
+    position: relative;    
+}
+svg {
+    width: 42px;
+    height: 42px;
+    display: block; 
+    position: relative;
+    .knob-outline {
+        fill: transparent;
+        stroke-width: 0.1px;
+        stroke-linecap: round;
+        stroke: aqua;
+        width: 100%;
+        height: 100%;
+        filter: blur(0.05px);
+        transform: translateX(0);
+    }
+    line {
+        stroke: rgb(var(--base-1));
+        rotate: 0deg;
+        transform: translateY(20%);
+    }
+}
+input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 42px;
+    transform: rotate(-90deg);
+    opacity: 0;
+}
+

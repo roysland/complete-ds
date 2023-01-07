@@ -1,0 +1,57 @@
+:host {
+    transition: var(--transition-1), 0s top, 0s left;
+    position: fixed;
+    opacity: 1;
+    z-index: 5;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* css properties */
+    --body-gap: var(--spacing-m);
+    --header-gap: var(--spacing-m);
+    --functions-gap: var(--spacing-m);
+    --footer-gap: var(--spacing-m);
+  }
+  :host(:not([visible])) {
+    opacity: 0;
+    pointer-events: none;
+  }
+  air-card {
+    position: absolute;
+    border-radius: 0px;
+    background-color: rgb(var(--base-3));
+    box-shadow: var(--shadow-1);
+    transition: 0.2s all ease-out, 0s top, 0s left;
+    --body-gap: inherit;
+    --header-gap: inherit;
+    --functions-gap: inherit;
+    --footer-gap: inherit;
+  }
+  /* position */
+  :host([position='left']) air-card {
+    left: 0;
+  }
+  :host([position='right']) air-card {
+    right: 0;
+  }
+  :host([position='top']) air-card {
+    top: 0;
+  }
+  :host([position='bottom']) air-card {
+    bottom: 0;
+  }
+  /* animations */
+  :host([position='left']:not([visible])) air-card {
+    margin-left: -40px;
+  }
+  :host([position='right']:not([visible])) air-card {
+    margin-right: -40px;
+  }
+  :host([position='top']:not([visible])) air-card {
+    margin-top: -40px;
+  }
+  :host([position='bottom']:not([visible])) air-card {
+    margin-bottom: -40px;
+  }
