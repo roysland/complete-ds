@@ -50,7 +50,7 @@ export class AirAccordion extends LitElement {
             ${this.icon
               ? html` <air-icon class="icon" icon="${this.icon}"></air-icon> `
               : ''}
-            <p>${this.label}</p>
+            <air-text size="card-title" display="block">${this.label}</air-text>
             <air-icon
               button
               class="expand"

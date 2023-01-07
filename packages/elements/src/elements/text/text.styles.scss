@@ -20,3 +20,6 @@ font: var(--label);
 :host([size='xs']) {
 font-size: var(--font-xs);
 }
+:host([display='block']) {
+    display: block;
+}

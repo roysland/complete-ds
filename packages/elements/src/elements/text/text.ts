@@ -10,6 +10,7 @@ import styles from './text.styles.scss'
 @customElement('air-text')
 export class AirText extends LitElement {
   @property({ type: String, reflect: true }) size = 'label';
+  @property({ type: String, reflect: true }) display = 'inline'
   @property({ type: String, reflect: true }) color:
     | 'header-1'
     | 'header-2'

@@ -23,6 +23,7 @@
   .top {
     display: flex;
     overflow: auto;
+    justify-content: space-between;
   }
   .header,
   slot[name='functions'] {

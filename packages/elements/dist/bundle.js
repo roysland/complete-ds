@@ -766,6 +766,7 @@ slot,
 .top {
   display: flex;
   overflow: auto;
+  justify-content: space-between;
 }
 
 .header,
@@ -869,7 +870,7 @@ slot[name=footer] {
           ${this.label || this.icon ? y`
                 <div class="label">
                   ${this.icon ? y` <air-icon icon="${this.icon}"></air-icon> ` : ""}
-                  <p>${this.label}</p>
+                  <air-text size="card-title">${this.label}</air-text>
                 </div>
                 ${!this.emptyHeader && (this.label || this.icon) ? y` <div style="margin-top: var(--spacing-l)"></div> ` : ""}
               ` : ""}
@@ -977,6 +978,7 @@ slot[name=footer] {
   cursor: pointer;
   display: flex;
   flex: 1;
+  justify-content: space-between;
 }
 
 .icon {
@@ -1028,7 +1030,7 @@ slot[name=header] p {
         >
           <div class="header">
             ${this.icon ? y` <air-icon class="icon" icon="${this.icon}"></air-icon> ` : ""}
-            <p>${this.label}</p>
+            <air-text size="card-title" display="block">${this.label}</air-text>
             <air-icon
               button
               class="expand"
@@ -1243,6 +1245,10 @@ slot[name=right] {
 
 :host([size=xs]) {
   font-size: var(--font-xs);
+}
+
+:host([display=block]) {
+  display: block;
 }`;
   var text_styles_default = styles5;
 
@@ -1251,6 +1257,7 @@ slot[name=right] {
     constructor() {
       super(...arguments);
       this.size = "label";
+      this.display = "inline";
     }
     static get styles() {
       return text_styles_default;
@@ -1269,6 +1276,9 @@ slot[name=right] {
   __decorateClass([
     e5({ type: String, reflect: true })
   ], AirText.prototype, "size", 2);
+  __decorateClass([
+    e5({ type: String, reflect: true })
+  ], AirText.prototype, "display", 2);
   __decorateClass([
     e5({ type: String, reflect: true })
   ], AirText.prototype, "color", 2);

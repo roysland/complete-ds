@@ -18,7 +18,8 @@
         "build:sass": "sass src/styles/index.scss public/build/bundle.css",
         "watch": "node ./scripts/watch.js",
         "watch:sass": "sass src/styles/index.scss public/build/bundle.css -w",
-        "analyze": "wca src --outFile custom-elements.json && wca src --format vscode --outFile vscode-html-custom-data.json && wca src --outFile custom-elements.md"
+        "analyze": "wca src --outFile custom-elements.json && wca src --format vscode --outFile vscode-html-custom-data.json && wca src --outFile custom-elements.md",
+        "format": "prettier --write --single-quote components/*/*.ts"
     },
     "keywords": [],
     "author": "",

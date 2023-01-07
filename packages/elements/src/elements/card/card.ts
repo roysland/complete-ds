@@ -39,7 +39,7 @@ export class AirCard extends LitElement {
                   ${this.icon
                     ? html` <air-icon icon="${this.icon}"></air-icon> `
                     : ''}
-                  <p>${this.label}</p>
+                  <air-text size="card-title">${this.label}</air-text>
                 </div>
                 ${!this.emptyHeader && (this.label || this.icon)
                   ? html` <div style="margin-top: var(--spacing-l)"></div> `
