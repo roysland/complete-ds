@@ -7,24 +7,26 @@
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "exports": {
-      ".": "./dist/bundle.js"
+        ".": "./dist/bundle.js"
     },
     "files": [
-      "dist"
+        "dist"
     ],
     "scripts": {
         "build:ts": "tsc",
         "build": "node ./scripts/build.js",
-        "build:sass": "sass src/styles/index.scss public/build/bundle.css",
         "watch": "node ./scripts/watch.js",
-        "watch:sass": "sass src/styles/index.scss public/build/bundle.css -w",
-        "analyze": "wca src --outFile custom-elements.json && wca src --format vscode --outFile vscode-html-custom-data.json && wca src --outFile custom-elements.md",
-        "format": "prettier --write --single-quote components/*/*.ts"
+        "format": "prettier --write --single-quote components/*/*.ts",
+        "test": "web-test-runner \"test/**/*.test.js\" --node-resolve"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@esm-bundle/chai": "^4.3.4-fix.0",
+        "@open-wc/testing": "^3.1.7",
+        "@web/dev-server-legacy": "^1.0.1",
+        "@web/test-runner": "^0.15.0",
         "esbuild": "^0.15.18",
         "esbuild-plugin-lit": "^0.1.1",
         "esbuild-plugin-lit-css": "^2.0.1",
@@ -33,7 +35,6 @@
         "typescript": "^4.9.4"
     },
     "dependencies": {
-        "contactjs": "^2.1.4",
         "lit": "^2.5.0",
         "styles": "*"
     }
